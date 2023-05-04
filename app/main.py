@@ -11,7 +11,7 @@ from fastai.vision.all import PILImage, load_learner
 from fastapi import FastAPI, File
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
-# from src.utils.eval_utils import resize_and_crop_center
+from src.utils.eval_utils import resize_and_crop_center
 
 
 MODEL_PICKEL_PATH = Path('models/model_pickle_fastai.pkl').absolute()

@@ -4,3 +4,43 @@ Surface defect detection is a core process of filtering unqualified products, ho
 
 ![image](https://user-images.githubusercontent.com/64821137/236259068-8936244d-790c-4777-bc97-5d928308afb5.png)
 
+### The dataset is described in detail here: 
+https://www.researchgate.net/profile/Congying-Qiu/publication/327701995_Saliency_defect_detection_of_magnetic_tiles/links/5b9fd1bd45851574f7d25019/Saliency-defect-detection-of-magnetic-tiles.pdf
+
+### The dataset itself is hosted in this repository:
+[https://github.com/abin24/Magnetic-tile-defect-datasets.](https://github.com/abin24/Magnetic-tile-defect-datasets.)
+
+### This project contains two components:
+1. training of image segmentation model using pipelines
+2. web API that calls the above model on a provided image and responds with a binary segmentation mask
+
+Here's the pipeline:
+```
+                               +----------------+                         
+                               | check_packages |                         
+                          *****+----------------+*****                    
+                     *****        *          **       ******              
+               ******          ***             **           *****         
+            ***               *                  **              ******   
++-----------+               **                     *                   ***
+| data_load |             **                       *                     *
++-----------+           **                         *                     *
+           ***        **                           *                     *
+              *     **                             *                     *
+               **  *                               *                     *
+          +------------+                           *                     *
+          | data_split |***                        *                     *
+          +------------+   *****                   *                     *
+                  *             *******            *                     *
+                  *                    *****       *                     *
+                  *                         ****   *                     *
+                  **                          +-------+                ***
+                    ****                      | train |          ******   
+                        ****                  +-------+     *****         
+                            ***              **       ******              
+                               ****        **   ******                    
+                                   **     *  ***                          
+                                  +----------+                            
+                                  | evaluate |                            
+                                  +----------+
+```             
